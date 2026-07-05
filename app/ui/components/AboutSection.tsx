@@ -6,6 +6,13 @@ const HIGHLIGHTS = [
   { value: "B2", label: "Nivel de inglés" },
 ];
 
+/**
+ * @function AboutSection
+ * @description Sección "Sobre Mí" que resume la biografía, el rol actual y los objetivos profesionales.
+ * 
+ * WHY: Separar este contenido en su propio componente permite reusarlo o moverlo independientemente
+ * dentro de la estructura de la página principal sin afectar el Hero o la sección de experiencia.
+ */
 export default function AboutSection() {
   return (
     <section

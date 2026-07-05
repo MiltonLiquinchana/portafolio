@@ -34,6 +34,13 @@ const EXPERIENCE: ExperienceItem[] = [
   },
 ];
 
+/**
+ * @function ExperienceSection
+ * @description Línea de tiempo visual que muestra la trayectoria laboral, roles y responsabilidades.
+ * 
+ * WHY: El formato de línea de tiempo facilita la lectura cronológica. Separar esta sección ayuda a 
+ * focalizar las actualizaciones del currículum digital sin tocar otros componentes estructurales.
+ */
 export default function ExperienceSection() {
   return (
     <section

@@ -1,5 +1,12 @@
 import Link from "next/link";
 
+/**
+ * @function Footer
+ * @description Pie de página estático con derechos de autor e información complementaria.
+ * 
+ * WHY: Se abstrae de la estructura general para poder inyectarlo fácilmente en `layout.tsx` 
+ * o en páginas individuales sin ensuciar el código del contenedor principal.
+ */
 export default function Footer() {
   const year = new Date().getFullYear();
 

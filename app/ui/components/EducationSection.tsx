@@ -38,6 +38,13 @@ const COURSES = [
   },
 ];
 
+/**
+ * @function EducationSection
+ * @description Exhibe certificaciones, títulos académicos y cursos completados.
+ * 
+ * WHY: Se separa de la sección de "Experiencia" porque reclutadores y sistemas ATS suelen
+ * buscar explícitamente formación académica versus experiencia laboral. Mantenerlo en su propio módulo aporta semántica al código.
+ */
 export default function EducationSection() {
   return (
     <section

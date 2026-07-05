@@ -1,0 +1,178 @@
+# Graph Report - portafolio  (2026-07-05)
+
+## Corpus Check
+- 43 files · ~18,179 words
+- Verdict: corpus is large enough that graph structure adds value.
+
+## Summary
+- 216 nodes · 194 edges · 35 communities (22 shown, 13 thin omitted)
+- Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
+- Token cost: 0 input · 0 output
+
+## Graph Freshness
+- Built from commit: `053056e6`
+- Run `git rev-parse HEAD` and compare to check if the graph is stale.
+- Run `graphify update .` after code changes (no API cost).
+
+## Community Hubs (Navigation)
+- [[_COMMUNITY_page.tsx|page.tsx]]
+- [[_COMMUNITY_devDependencies|devDependencies]]
+- [[_COMMUNITY_compilerOptions|compilerOptions]]
+- [[_COMMUNITY_What You Must Do When Invoked|What You Must Do When Invoked]]
+- [[_COMMUNITY_graphify|/graphify]]
+- [[_COMMUNITY_graphify reference extra exports and benchmark|graphify reference: extra exports and benchmark]]
+- [[_COMMUNITY_API Integration Architect|API Integration Architect]]
+- [[_COMMUNITY_Code Reviewer Senior|Code Reviewer Senior]]
+- [[_COMMUNITY_Frontend Developer|Frontend Developer]]
+- [[_COMMUNITY_graphify reference query, path, explain|graphify reference: query, path, explain]]
+- [[_COMMUNITY_Analizador de Contexto|Analizador de Contexto]]
+- [[_COMMUNITY_File Writer Senior|File Writer Senior]]
+- [[_COMMUNITY_Frontend Architect|Frontend Architect]]
+- [[_COMMUNITY_Technical Writer Senior|Technical Writer Senior]]
+- [[_COMMUNITY_Test Engineer|Test Engineer]]
+- [[_COMMUNITY_UX Designer (Pro Max)|UX Designer (Pro Max)]]
+- [[_COMMUNITY_graphify reference add a URL and watch a folder|graphify reference: add a URL and watch a folder]]
+- [[_COMMUNITY_graphify reference commit hook and native CLAUDE.md integration|graphify reference: commit hook and native CLAUDE.md integration]]
+- [[_COMMUNITY_graphify reference incremental update and cluster-only|graphify reference: incremental update and cluster-only]]
+- [[_COMMUNITY_Implement Feature|Implement Feature]]
+- [[_COMMUNITY_layout.tsx|layout.tsx]]
+- [[_COMMUNITY_README|README.md]]
+- [[_COMMUNITY_AGENTS|AGENTS.md]]
+- [[_COMMUNITY_graphify reference GitHub clone and cross-repo merge|graphify reference: GitHub clone and cross-repo merge]]
+- [[_COMMUNITY_graphify reference transcribe video and audio|graphify reference: transcribe video and audio]]
+- [[_COMMUNITY_Navbar.tsx|Navbar.tsx]]
+- [[_COMMUNITY_architecture-rules|architecture-rules.md]]
+- [[_COMMUNITY_graphify|graphify.md]]
+- [[_COMMUNITY_rules|rules.md]]
+- [[_COMMUNITY_extraction-spec|extraction-spec.md]]
+- [[_COMMUNITY_graphify|graphify.md]]
+- [[_COMMUNITY_eslint.config.mjs|eslint.config.mjs]]
+- [[_COMMUNITY_next.config.ts|next.config.ts]]
+- [[_COMMUNITY_postcss.config.mjs|postcss.config.mjs]]
+
+## God Nodes (most connected - your core abstractions)
+1. `compilerOptions` - 16 edges
+2. `What You Must Do When Invoked` - 11 edges
+3. `/graphify` - 10 edges
+4. `graphify reference: extra exports and benchmark` - 8 edges
+5. `ScrollReveal()` - 7 edges
+6. `scripts` - 5 edges
+7. `API Integration Architect` - 5 edges
+8. `Code Reviewer Senior` - 5 edges
+9. `Frontend Developer` - 5 edges
+10. `graphify reference: query, path, explain` - 5 edges
+
+## Surprising Connections (you probably didn't know these)
+- None detected - all connections are within the same source files.
+
+## Import Cycles
+- None detected.
+
+## Communities (35 total, 13 thin omitted)
+
+### Community 0 - "page.tsx"
+Cohesion: 0.08
+Nodes (14): HIGHLIGHTS, FormState, SOCIAL_LINKS, COURSES, EDUCATION, EXPERIENCE, ExperienceItem, Project (+6 more)
+
+### Community 1 - "devDependencies"
+Cohesion: 0.09
+Nodes (21): dependencies, next, react, react-dom, devDependencies, eslint, eslint-config-next, tailwindcss (+13 more)
+
+### Community 2 - "compilerOptions"
+Cohesion: 0.10
+Nodes (19): compilerOptions, allowJs, esModuleInterop, incremental, isolatedModules, jsx, lib, module (+11 more)
+
+### Community 3 - "What You Must Do When Invoked"
+Cohesion: 0.14
+Nodes (14): Part A - Structural extraction for code files, Part B - Semantic extraction (parallel subagents), Part C - Merge AST + semantic into final extraction, Step 0 - GitHub repos and multi-path merge (only if a URL or several paths), Step 1 - Ensure graphify is installed, Step 2.5 - Video and audio (only if video files detected), Step 2 - Detect files, Step 3 - Extract entities and relationships (+6 more)
+
+### Community 4 - "/graphify"
+Cohesion: 0.20
+Nodes (9): For /graphify add and --watch, For /graphify query, For the commit hook and native CLAUDE.md integration, For --update and --cluster-only, /graphify, Honesty Rules, Interpreter guard for subcommands, Usage (+1 more)
+
+### Community 5 - "graphify reference: extra exports and benchmark"
+Cohesion: 0.22
+Nodes (8): graphify reference: extra exports and benchmark, Step 6b - Wiki (only if --wiki flag), Step 7 - Neo4j export (only if --neo4j or --neo4j-push flag), Step 7a - FalkorDB export (only if --falkordb or --falkordb-push flag), Step 7b - SVG export (only if --svg flag), Step 7c - GraphML export (only if --graphml flag), Step 7d - MCP server (only if --mcp flag), Step 8 - Token reduction benchmark (only if total_words > 5000)
+
+### Community 6 - "API Integration Architect"
+Cohesion: 0.33
+Nodes (5): API Integration Architect, Output, Plantillas / ejemplos rápidos, Rules, Tasks
+
+### Community 7 - "Code Reviewer Senior"
+Cohesion: 0.33
+Nodes (5): Anti-Patterns a Rechazar, Code Reviewer Senior, Output, Rules, Tasks
+
+### Community 8 - "Frontend Developer"
+Cohesion: 0.33
+Nodes (5): Ejemplo de patrón UI → Controller, Frontend Developer, Output, Rules, Tasks
+
+### Community 9 - "graphify reference: query, path, explain"
+Cohesion: 0.33
+Nodes (5): For /graphify explain, For /graphify path, graphify reference: query, path, explain, Step 0 — Constrained query expansion (REQUIRED before traversal), Step 1 — Traversal
+
+### Community 10 - "Analizador de Contexto"
+Cohesion: 0.40
+Nodes (4): Analizador de Contexto, Output, Rules, Tasks
+
+### Community 11 - "File Writer Senior"
+Cohesion: 0.40
+Nodes (4): File Writer Senior, Output, Rules, Tasks
+
+### Community 12 - "Frontend Architect"
+Cohesion: 0.40
+Nodes (4): Frontend Architect, Output, Rules, Tasks
+
+### Community 13 - "Technical Writer Senior"
+Cohesion: 0.40
+Nodes (4): Output, Rules, Tasks, Technical Writer Senior
+
+### Community 14 - "Test Engineer"
+Cohesion: 0.40
+Nodes (4): Output, Rules, Tasks, Test Engineer
+
+### Community 15 - "UX Designer (Pro Max)"
+Cohesion: 0.40
+Nodes (4): Output, Rules, Tasks, UX Designer (Pro Max)
+
+### Community 16 - "graphify reference: add a URL and watch a folder"
+Cohesion: 0.50
+Nodes (3): For /graphify add, For --watch, graphify reference: add a URL and watch a folder
+
+### Community 17 - "graphify reference: commit hook and native CLAUDE.md integration"
+Cohesion: 0.50
+Nodes (3): For git commit hook, For native CLAUDE.md integration, graphify reference: commit hook and native CLAUDE.md integration
+
+### Community 18 - "graphify reference: incremental update and cluster-only"
+Cohesion: 0.50
+Nodes (3): For --cluster-only, For --update (incremental re-extraction), graphify reference: incremental update and cluster-only
+
+### Community 19 - "Implement Feature"
+Cohesion: 0.50
+Nodes (3): Implement Feature, Notas operativas, Steps
+
+### Community 21 - "README.md"
+Cohesion: 0.50
+Nodes (3): Deploy on Vercel, Getting Started, Learn More
+
+## Knowledge Gaps
+- **135 isolated node(s):** `HIGHLIGHTS`, `FormState`, `SOCIAL_LINKS`, `EDUCATION`, `COURSES` (+130 more)
+  These have ≤1 connection - possible missing edges or undocumented components.
+- **13 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+
+## Suggested Questions
+_Questions this graph is uniquely positioned to answer:_
+
+- **Why does `What You Must Do When Invoked` connect `What You Must Do When Invoked` to `/graphify`?**
+  _High betweenness centrality (0.009) - this node is a cross-community bridge._
+- **Why does `/graphify` connect `/graphify` to `What You Must Do When Invoked`?**
+  _High betweenness centrality (0.007) - this node is a cross-community bridge._
+- **What connects `HIGHLIGHTS`, `FormState`, `SOCIAL_LINKS` to the rest of the system?**
+  _135 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **Should `page.tsx` be split into smaller, more focused modules?**
+  _Cohesion score 0.0784313725490196 - nodes in this community are weakly interconnected._
+- **Should `devDependencies` be split into smaller, more focused modules?**
+  _Cohesion score 0.09090909090909091 - nodes in this community are weakly interconnected._
+- **Should `compilerOptions` be split into smaller, more focused modules?**
+  _Cohesion score 0.1 - nodes in this community are weakly interconnected._
+- **Should `What You Must Do When Invoked` be split into smaller, more focused modules?**
+  _Cohesion score 0.14285714285714285 - nodes in this community are weakly interconnected._

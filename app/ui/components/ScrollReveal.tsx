@@ -20,6 +20,13 @@ interface ScrollRevealProps {
  *
  * WHY: Mantener compatibilidad cross-browser sin framer-motion (sin dependencias extra).
  */
+/**
+ * @function ScrollReveal
+ * @description Componente envoltorio que anima la aparición de sus hijos a medida que entran en el viewport.
+ * 
+ * WHY: Centralizar la lógica de intersección (IntersectionObserver) y animación en un componente reutilizable
+ * asegura la consistencia de las animaciones en toda la página y previene la duplicación de código de estado (isVisible).
+ */
 export default function ScrollReveal({
   children,
   className = "",

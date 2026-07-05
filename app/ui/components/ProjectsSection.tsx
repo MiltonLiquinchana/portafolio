@@ -1,4 +1,11 @@
+"use client";
+
 import ScrollReveal from "./ScrollReveal";
+
+interface LinkDef {
+  url: string;
+  label: string;
+}
 
 interface Project {
   title: string;
@@ -7,6 +14,8 @@ interface Project {
   highlights: string[];
   accent: string;
   type: string;
+  links?: LinkDef[];
+  statusNote?: string;
 }
 
 const PROJECTS: Project[] = [
@@ -23,9 +32,13 @@ const PROJECTS: Project[] = [
       "Despliegue automático vía webhooks de GitHub",
     ],
     accent: "#00d4b4",
+    statusNote: "🚧 En desarrollo. Repositorios de BD, Front y Back privados. Frontend disponible en Vercel (Backend inactivo temporalmente).",
+    links: [
+      { url: "#", label: "Ver Frontend en Vercel" }
+    ]
   },
   {
-    title: "Sistema de Gestión Hospitalaria",
+    title: "Sistema de Gestión Hospitalaria (Auna)",
     type: "API REST & Serverless",
     description:
       "Sistema backend para gestión hospitalaria con endpoints REST en Node.js/TypeScript, arquitectura serverless en AWS y base de datos DynamoDB para alta disponibilidad.",
@@ -37,6 +50,10 @@ const PROJECTS: Project[] = [
       "Alta disponibilidad y escalabilidad automática",
     ],
     accent: "#3b82f6",
+    links: [
+      { url: "https://auna.org/pe", label: "Auna Portal" },
+      { url: "https://mi.auna.pe", label: "Mi Auna" }
+    ]
   },
   {
     title: "Plataforma Web con Microservicios",
@@ -74,6 +91,13 @@ function ExternalLinkIcon() {
   );
 }
 
+/**
+ * @function ProjectsSection
+ * @description Muestra una cuadrícula de proyectos destacados, combinando enlaces, estados e imágenes representativas.
+ * 
+ * WHY: Organizar los proyectos en una estructura de datos local (o en el futuro de una API) permite iterar y
+ * renderizar "cards" de forma predecible y estandarizada, manteniendo un diseño consistente para el portafolio.
+ */
 export default function ProjectsSection() {
   return (
     <section
@@ -234,26 +258,68 @@ export default function ProjectsSection() {
                   ))}
                 </div>
 
-                {/* Links */}
-                <div style={{ display: "flex", gap: "1rem" }}>
-                  <a
-                    href="#"
-                    aria-label={`Ver repositorio de ${project.title} (próximamente)`}
-                    style={{
-                      display: "inline-flex",
-                      alignItems: "center",
-                      gap: "0.4rem",
-                      fontSize: "0.82rem",
-                      fontWeight: 600,
-                      color: project.accent,
-                      textDecoration: "none",
-                      opacity: 0.7,
-                      cursor: "default",
-                    }}
-                  >
-                    <ExternalLinkIcon />
-                    Repositorio (próximamente)
-                  </a>
+                {/* Links and Status */}
+                <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+                  {project.statusNote && (
+                    <div style={{
+                      fontSize: "0.8rem",
+                      color: "var(--text-muted)",
+                      background: "rgba(255,255,255,0.03)",
+                      padding: "0.6rem 0.8rem",
+                      borderRadius: "6px",
+                      border: "1px solid var(--border-subtle)",
+                      lineHeight: 1.5,
+                    }}>
+                      {project.statusNote}
+                    </div>
+                  )}
+
+                  <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }}>
+                    {project.links ? (
+                      project.links.map((link) => (
+                        <a
+                          key={link.url}
+                          href={link.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`Visitar ${link.label}`}
+                          style={{
+                            display: "inline-flex",
+                            alignItems: "center",
+                            gap: "0.4rem",
+                            fontSize: "0.85rem",
+                            fontWeight: 600,
+                            color: project.accent,
+                            textDecoration: "none",
+                            transition: "opacity 0.2s ease",
+                          }}
+                          onMouseOver={(e) => (e.currentTarget.style.opacity = "0.8")}
+                          onMouseOut={(e) => (e.currentTarget.style.opacity = "1")}
+                          onFocus={(e) => (e.currentTarget.style.opacity = "0.8")}
+                          onBlur={(e) => (e.currentTarget.style.opacity = "1")}
+                        >
+                          <ExternalLinkIcon />
+                          {link.label}
+                        </a>
+                      ))
+                    ) : (
+                      <span
+                        style={{
+                          display: "inline-flex",
+                          alignItems: "center",
+                          gap: "0.4rem",
+                          fontSize: "0.82rem",
+                          fontWeight: 600,
+                          color: project.accent,
+                          opacity: 0.5,
+                          cursor: "default",
+                        }}
+                      >
+                        <ExternalLinkIcon />
+                        Repositorio Privado
+                      </span>
+                    )}
+                  </div>
                 </div>
               </article>
             </ScrollReveal>

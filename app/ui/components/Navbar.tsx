@@ -11,6 +11,13 @@ const NAV_LINKS = [
   { href: "#contact", label: "Contacto" },
 ];
 
+/**
+ * @function Navbar
+ * @description Barra de navegación persistente en la parte superior, con soporte responsivo y cambio de estilo al hacer scroll.
+ * 
+ * WHY: Como componente central de navegación, se implementa con estado interno para rastrear el scroll,
+ * lo cual mejora la experiencia de usuario ocultando o resaltando el menú en el momento adecuado de la lectura.
+ */
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);

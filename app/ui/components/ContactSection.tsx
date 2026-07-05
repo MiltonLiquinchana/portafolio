@@ -50,6 +50,14 @@ const SOCIAL_LINKS = [
   },
 ];
 
+/**
+ * @function ContactSection
+ * @description Interfaz visual del formulario de contacto que permite a los usuarios enviar mensajes.
+ * 
+ * WHY: Siguiendo la Clean Architecture (Capa de Presentación UI), este componente solo recolecta el estado y
+ * realiza el 'fetch' al Controller (/api/contact). No contiene la lógica de negocio del envío de correo (Resend),
+ * delegándola totalmente al backend para proteger las claves de API y asegurar la estabilidad.
+ */
 export default function ContactSection() {
   const [form, setForm] = useState<FormState>({ name: "", email: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
@@ -61,17 +69,38 @@ export default function ContactSection() {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e: React.SyntheticEvent<HTMLFormElement>) => {
+  const [errorMsg, setErrorMsg] = useState("");
+
+  const handleSubmit = async (e: React.SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();
     setSending(true);
-    // Placeholder: simulate async send
-    setTimeout(() => {
-      setSending(false);
+    setErrorMsg("");
+    
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok || !data.success) {
+        throw new Error(data.error || "Error al enviar el mensaje");
+      }
+
       setSubmitted(true);
       setForm({ name: "", email: "", message: "" });
-    }, 1200);
+    } catch (err: unknown) {
+      if (err instanceof Error) {
+        setErrorMsg(err.message || "Hubo un problema. Intenta nuevamente.");
+      } else {
+        setErrorMsg("Hubo un problema. Intenta nuevamente.");
+      }
+    } finally {
+      setSending(false);
+    }
   };
-
   return (
     <section
       id="contact"
@@ -281,6 +310,11 @@ export default function ContactSection() {
                         "Enviar mensaje"
                       )}
                     </button>
+                    {errorMsg && (
+                      <p style={{ color: "#ef4444", fontSize: "0.85rem", marginTop: "0.5rem", textAlign: "center" }}>
+                        {errorMsg}
+                      </p>
+                    )}
                   </div>
                 </form>
               )}

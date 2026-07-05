@@ -24,7 +24,6 @@
   "22": "AGENTS.md",
   "23": "graphify reference: GitHub clone and cross-repo merge",
   "24": "graphify reference: transcribe video and audio",
-  "25": "Navbar.tsx",
   "26": "architecture-rules.md",
   "27": "graphify.md",
   "28": "rules.md",
@@ -33,6 +32,5 @@
   "31": "eslint.config.mjs",
   "32": "next.config.ts",
   "33": "postcss.config.mjs",
-  "34": "CLAUDE.md",
-  "35": "Navbar.tsx"
+  "34": "CLAUDE.md"
 }

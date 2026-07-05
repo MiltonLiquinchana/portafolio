@@ -82,6 +82,13 @@ const TECH_GROUPS: TechGroup[] = [
   },
 ];
 
+/**
+ * @function StackSection
+ * @description Muestra las tecnologías y herramientas dominadas, agrupadas por categorías.
+ * 
+ * WHY: Modularizar el stack tecnológico facilita su actualización (agregar/quitar tecnologías) sin afectar
+ * otras secciones del perfil. Además, mantener un listado claro ayuda a los reclutadores a escanear rápidamente.
+ */
 export default function StackSection() {
   return (
     <section

@@ -1,16 +1,16 @@
 # Graph Report - portafolio  (2026-07-05)
 
 ## Corpus Check
-- 43 files · ~18,269 words
+- 45 files · ~19,536 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 219 nodes · 197 edges · 36 communities (23 shown, 13 thin omitted)
+- 225 nodes · 205 edges · 34 communities (22 shown, 12 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `053056e6`
+- Built from commit: `390ca2b7`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -40,7 +40,6 @@
 - [[_COMMUNITY_AGENTS|AGENTS.md]]
 - [[_COMMUNITY_graphify reference GitHub clone and cross-repo merge|graphify reference: GitHub clone and cross-repo merge]]
 - [[_COMMUNITY_graphify reference transcribe video and audio|graphify reference: transcribe video and audio]]
-- [[_COMMUNITY_Navbar.tsx|Navbar.tsx]]
 - [[_COMMUNITY_architecture-rules|architecture-rules.md]]
 - [[_COMMUNITY_graphify|graphify.md]]
 - [[_COMMUNITY_rules|rules.md]]
@@ -49,7 +48,6 @@
 - [[_COMMUNITY_eslint.config.mjs|eslint.config.mjs]]
 - [[_COMMUNITY_next.config.ts|next.config.ts]]
 - [[_COMMUNITY_postcss.config.mjs|postcss.config.mjs]]
-- [[_COMMUNITY_Navbar.tsx|Navbar.tsx]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `compilerOptions` - 16 edges
@@ -57,7 +55,7 @@
 3. `/graphify` - 10 edges
 4. `graphify reference: extra exports and benchmark` - 8 edges
 5. `ScrollReveal()` - 7 edges
-6. `scripts` - 7 edges
+6. `scripts` - 5 edges
 7. `API Integration Architect` - 5 edges
 8. `Code Reviewer Senior` - 5 edges
 9. `Frontend Developer` - 5 edges
@@ -69,27 +67,27 @@
 ## Import Cycles
 - None detected.
 
-## Communities (36 total, 13 thin omitted)
+## Communities (34 total, 12 thin omitted)
 
 ### Community 0 - "page.tsx"
-Cohesion: 0.08
-Nodes (14): HIGHLIGHTS, FormState, SOCIAL_LINKS, COURSES, EDUCATION, EXPERIENCE, ExperienceItem, Project (+6 more)
+Cohesion: 0.07
+Nodes (16): HIGHLIGHTS, FormState, SOCIAL_LINKS, COURSES, EDUCATION, EXPERIENCE, ExperienceItem, NAV_LINKS (+8 more)
 
 ### Community 1 - "devDependencies"
-Cohesion: 0.11
-Nodes (17): dependencies, next, react, react-dom, devDependencies, eslint, eslint-config-next, sass (+9 more)
+Cohesion: 0.08
+Nodes (23): dependencies, next, react, react-dom, resend, devDependencies, eslint, eslint-config-next (+15 more)
 
 ### Community 2 - "compilerOptions"
 Cohesion: 0.10
 Nodes (19): compilerOptions, allowJs, esModuleInterop, incremental, isolatedModules, jsx, lib, module (+11 more)
 
 ### Community 3 - "What You Must Do When Invoked"
-Cohesion: 0.14
-Nodes (14): Part A - Structural extraction for code files, Part B - Semantic extraction (parallel subagents), Part C - Merge AST + semantic into final extraction, Step 0 - GitHub repos and multi-path merge (only if a URL or several paths), Step 1 - Ensure graphify is installed, Step 2.5 - Video and audio (only if video files detected), Step 2 - Detect files, Step 3 - Extract entities and relationships (+6 more)
+Cohesion: 0.08
+Nodes (23): For /graphify add and --watch, For /graphify query, For the commit hook and native CLAUDE.md integration, For --update and --cluster-only, /graphify, Honesty Rules, Interpreter guard for subcommands, Part A - Structural extraction for code files (+15 more)
 
 ### Community 4 - "/graphify"
-Cohesion: 0.20
-Nodes (9): For /graphify add and --watch, For /graphify query, For the commit hook and native CLAUDE.md integration, For --update and --cluster-only, /graphify, Honesty Rules, Interpreter guard for subcommands, Usage (+1 more)
+Cohesion: 0.53
+Nodes (3): POST(), ContactData, ContactService
 
 ### Community 5 - "graphify reference: extra exports and benchmark"
 Cohesion: 0.22
@@ -155,27 +153,21 @@ Nodes (3): Implement Feature, Notas operativas, Steps
 Cohesion: 0.50
 Nodes (3): Deploy on Vercel, Getting Started, Learn More
 
-### Community 25 - "Navbar.tsx"
-Cohesion: 0.29
-Nodes (7): scripts, build, build:css, dev, dev:css, lint, start
-
 ## Knowledge Gaps
 - **138 isolated node(s):** `inter`, `metadata`, `HIGHLIGHTS`, `FormState`, `SOCIAL_LINKS` (+133 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **13 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **12 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `What You Must Do When Invoked` connect `What You Must Do When Invoked` to `/graphify`?**
-  _High betweenness centrality (0.009) - this node is a cross-community bridge._
 - **What connects `inter`, `metadata`, `HIGHLIGHTS` to the rest of the system?**
   _138 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `page.tsx` be split into smaller, more focused modules?**
-  _Cohesion score 0.0784313725490196 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.06827880512091039 - nodes in this community are weakly interconnected._
 - **Should `devDependencies` be split into smaller, more focused modules?**
-  _Cohesion score 0.1111111111111111 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.08333333333333333 - nodes in this community are weakly interconnected._
 - **Should `compilerOptions` be split into smaller, more focused modules?**
   _Cohesion score 0.1 - nodes in this community are weakly interconnected._
 - **Should `What You Must Do When Invoked` be split into smaller, more focused modules?**
-  _Cohesion score 0.14285714285714285 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.08333333333333333 - nodes in this community are weakly interconnected._

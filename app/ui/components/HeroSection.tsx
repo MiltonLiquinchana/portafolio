@@ -1,5 +1,13 @@
 import Link from "next/link";
 
+/**
+ * @function HeroSection
+ * @description Componente principal de presentación (Hero) que se muestra al inicio del portafolio.
+ * 
+ * WHY: Este componente está diseñado para causar una primera impresión impactante usando animaciones
+ * (framer-motion, si estuviera habilitado, o animaciones CSS) y tipografía grande.
+ * Encapsula la llamada a la acción principal ("Contáctame") sin mezclarse con la lógica de otros bloques de contenido.
+ */
 export default function HeroSection() {
   return (
     <section

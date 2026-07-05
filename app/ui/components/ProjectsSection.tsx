@@ -34,7 +34,7 @@ const PROJECTS: Project[] = [
     accent: "#00d4b4",
     statusNote: "🚧 En desarrollo. Repositorios de BD, Front y Back privados. Frontend disponible en Vercel (Backend inactivo temporalmente).",
     links: [
-      { url: "#", label: "Ver Frontend en Vercel" }
+      { url: "https://aqua-app-front-git-feat-65ade2-100070nfelipe-gmailcoms-projects.vercel.app/", label: "Ver Frontend en Vercel" },
     ]
   },
   {

@@ -39,7 +39,7 @@ export class ContactService {
       // Ya que no tienes dominio verificado, el from DEBE ser onboarding@resend.dev
       const result = await this.resend.emails.send({
         from: 'Portfolio Contact <onboarding@resend.dev>',
-        to: 'liquinchana@hotmail.es',
+        to: 'mi100070n2019@outlook.com',
         subject: `Nuevo mensaje de ${name} desde tu Portafolio`,
         replyTo: email,
         html: `

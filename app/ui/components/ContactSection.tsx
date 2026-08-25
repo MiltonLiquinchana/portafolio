@@ -12,8 +12,8 @@ interface FormState {
 const SOCIAL_LINKS = [
   {
     label: "Email",
-    href: "mailto:liquinchana@hotmail.es",
-    value: "liquinchana@hotmail.es",
+    href: "mailto:mi100070n2019@outlook.com",
+    value: "mi100070n2019@outlook.com",
     icon: (
       <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
         <rect x="2" y="4" width="16" height="12" rx="2" stroke="currentColor" strokeWidth="1.5" />
@@ -23,30 +23,15 @@ const SOCIAL_LINKS = [
     accent: "#00d4b4",
   },
   {
-    label: "LinkedIn",
-    href: "#",
-    value: "linkedin.com/in/milton-liquinchana",
+    label: "Teléfono",
+    href: "tel:+593995883099",
+    value: "0995883099",
     icon: (
       <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-        <rect x="2" y="2" width="16" height="16" rx="3" stroke="currentColor" strokeWidth="1.5" />
-        <path d="M6 9v5M6 6.5v.01M10 14v-3a1 1 0 0 1 2 0v3M10 11v3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+        <path d="M5.2 3.5 7.5 3l1.2 3-1.5 1.2a10.5 10.5 0 0 0 5.6 5.6L14 11.3l3 1.2-.5 2.3c-.2.9-1.1 1.5-2 1.3A12.5 12.5 0 0 1 4 5.5c-.2-.9.3-1.8 1.2-2Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
     accent: "#3b82f6",
-  },
-  {
-    label: "GitHub",
-    href: "#",
-    value: "github.com/milton-liquinchana",
-    icon: (
-      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-        <path
-          d="M10 2a8 8 0 0 0-2.531 15.591c.4.074.547-.174.547-.386l-.011-1.517c-2.225.484-2.695-1.073-2.695-1.073-.364-.924-.889-1.17-.889-1.17-.727-.497.055-.487.055-.487.803.057 1.226.825 1.226.825.714 1.223 1.873.87 2.329.665.073-.517.279-.87.508-1.07-1.777-.202-3.645-.888-3.645-3.953 0-.874.312-1.588.823-2.147-.082-.202-.357-1.016.078-2.117 0 0 .672-.215 2.2.82A7.662 7.662 0 0 1 10 6.82c.68.003 1.364.092 2.003.27 1.527-1.035 2.198-.82 2.198-.82.436 1.101.161 1.915.08 2.117.512.559.822 1.273.822 2.147 0 3.073-1.871 3.749-3.653 3.947.288.248.544.735.544 1.481l-.01 2.196c0 .214.145.464.55.386A8.001 8.001 0 0 0 10 2Z"
-          fill="currentColor"
-        />
-      </svg>
-    ),
-    accent: "#8b5cf6",
   },
 ];
 

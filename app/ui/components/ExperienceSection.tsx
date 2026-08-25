@@ -10,15 +10,16 @@ interface ExperienceItem {
 
 const EXPERIENCE: ExperienceItem[] = [
   {
-    company: "CreaTuImagenDigital",
-    role: "Full Stack Developer",
-    period: "May 2020 — Oct 2023",
-    type: "Freelancer",
+    company: "NUBE Corporation",
+    role: "Desarrollador Full Stack",
+    period: "Oct 2023 — Nov 2025",
+    type: "Área de TI",
     description: [
-      "Desarrollo full stack de aplicaciones web a medida para clientes.",
-      "Diseño e implementación de interfaces de usuario con tecnologías modernas (React, Next.js).",
-      "Construcción de APIs REST y gestión de bases de datos relacionales.",
-      "Configuración y mantenimiento de pipelines de despliegue.",
+      "Desarrollo de endpoints REST con Node.js y TypeScript usando arquitectura Serverless en AWS y DynamoDB.",
+      "Desarrollo y refactorización de microservicios con Spring Boot y Spring Data REST.",
+      "Conversión de diseños de Figma a HTML, CSS y JavaScript.",
+      "Documentación de APIs con OpenAPI/Swagger y desarrollo de procedimientos almacenados en Oracle PL/SQL.",
+      "Gestión de despliegues con Docker, Kubernetes y Jenkins.",
     ],
   },
   {
@@ -27,9 +28,8 @@ const EXPERIENCE: ExperienceItem[] = [
     period: "Jun 2019 — Nov 2019",
     type: "Contrato",
     description: [
-      "Configuración y administración de la página web institucional con CMS.",
-      "Mantenimiento del contenido digital y optimización del sitio.",
-      "Soporte técnico a usuarios internos relacionados con la plataforma web.",
+      "Configuración y administración de la página web institucional utilizando herramientas CMS.",
+      "Mantenimiento del contenido web para mantener informada a la comunidad sobre las actividades institucionales.",
     ],
   },
 ];

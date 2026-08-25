@@ -131,8 +131,8 @@ export default function HeroSection() {
               animation: "hero-fade-in 0.8s ease-out 0.3s both",
             }}
           >
-            Backend robusto con Java & Node.js · Frontend moderno con React & Next.js ·
-            CI/CD, microservicios y buenas prácticas de desarrollo en cada proyecto.
+            Desarrollo web full-stack con Java, Spring Boot, Node.js, React y Next.js,
+            respaldado por microservicios, bases de datos y despliegues automatizados.
           </p>
 
           {/* CTAs */}

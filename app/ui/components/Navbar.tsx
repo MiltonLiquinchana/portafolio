@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const NAV_LINKS = [
   { href: "#about", label: "Sobre mí" },
@@ -75,7 +76,7 @@ export default function Navbar() {
             flexShrink: 0,
           }}
         >
-          ML
+          <Image src="/logomflq.svg" alt="Logo" width={40} height={40} />
         </Link>
 
         {/* Desktop Nav */}

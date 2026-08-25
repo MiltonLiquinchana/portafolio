@@ -20,16 +20,16 @@ interface Project {
 
 const PROJECTS: Project[] = [
   {
-    title: "Plataforma Full Stack Personal",
+    title: "Aplicación Full Stack Personal",
     type: "Proyecto Personal",
     description:
-      "Aplicación completa con autenticación moderna, arquitectura de microservicios y pipeline CI/CD totalmente automatizado desde el commit hasta el despliegue en producción.",
+      "Aplicación full-stack con frontend en Next.js, autenticación mediante Clerk y backend basado en microservicios con Spring Boot y MySQL.",
     stack: ["Next.js", "Clerk", "Spring Boot", "MySQL", "Docker", "Kubernetes", "Jenkins"],
     highlights: [
       "Frontend en Next.js con autenticación Clerk",
       "Backend Spring Boot — arquitectura microservicios",
-      "CI/CD con Jenkins + Docker + Kubernetes (Minikube)",
-      "Despliegue automático vía webhooks de GitHub",
+      "Pipeline CI/CD con Jenkins, Docker y Kubernetes (Minikube)",
+      "Despliegue automático mediante webhooks de GitHub",
     ],
     accent: "#00d4b4",
     statusNote: "🚧 En desarrollo. Repositorios de BD, Front y Back privados. Frontend disponible en Vercel (Backend inactivo temporalmente).",
@@ -38,28 +38,24 @@ const PROJECTS: Project[] = [
     ]
   },
   {
-    title: "Sistema de Gestión Hospitalaria (Auna)",
+    title: "Sistema médico de gestión hospitalaria",
     type: "API REST & Serverless",
     description:
-      "Sistema backend para gestión hospitalaria con endpoints REST en Node.js/TypeScript, arquitectura serverless en AWS y base de datos DynamoDB para alta disponibilidad.",
+      "Sistema médico desarrollado con endpoints REST en Node.js y TypeScript, arquitectura Serverless en AWS y persistencia en DynamoDB.",
     stack: ["Node.js", "TypeScript", "Express", "AWS", "Serverless", "DynamoDB"],
     highlights: [
       "Endpoints REST con Node.js y TypeScript",
       "Arquitectura Serverless en AWS Lambda",
       "DynamoDB para persistencia NoSQL",
-      "Alta disponibilidad y escalabilidad automática",
+      "Gestión hospitalaria con servicios desacoplados",
     ],
     accent: "#3b82f6",
-    links: [
-      { url: "https://auna.org/pe", label: "Auna Portal" },
-      { url: "https://mi.auna.pe", label: "Mi Auna" }
-    ]
   },
   {
-    title: "Plataforma Web con Microservicios",
+    title: "Plataforma web con microservicios",
     type: "Enterprise Platform",
     description:
-      "Migración y modernización de plataforma empresarial a Spring Data REST con microservicios, documentación OpenAPI/Swagger, procedimientos almacenados en Oracle PL/SQL y despliegue con Kubernetes.",
+      "Desarrollo y refactorización de microservicios con Spring Boot y Spring Data REST, integrando Oracle PL/SQL, documentación OpenAPI/Swagger y despliegues automatizados.",
     stack: ["Spring Data REST", "Oracle PL/SQL", "OpenAPI", "Kubernetes", "Jenkins"],
     highlights: [
       "Migración a Spring Data REST",

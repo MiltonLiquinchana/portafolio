@@ -1,9 +1,9 @@
 import ScrollReveal from "./ScrollReveal";
 
 const HIGHLIGHTS = [
-  { value: "5+", label: "Años de experiencia" },
-  { value: "10+", label: "Tecnologías dominadas" },
-  { value: "B2", label: "Nivel de inglés" },
+  { value: "2", label: "Experiencias laborales" },
+  { value: "4+", label: "Áreas técnicas" },
+  { value: "Intermedio", label: "Nivel de inglés" },
 ];
 
 /**
@@ -52,10 +52,9 @@ export default function AboutSection() {
                   marginBottom: "1.25rem",
                 }}
               >
-                Soy un desarrollador Full Stack con experiencia en diseño, desarrollo y
-                mantenimiento de aplicaciones web de extremo a extremo. Me especializo en
-                construir backends robustos y escalables junto a interfaces de usuario modernas
-                e intuitivas.
+                Soy Tecnólogo Superior en Desarrollo de Software y desarrollador Full Stack,
+                con experiencia en desarrollo web, APIs REST, microservicios y gestión de bases
+                de datos. Estoy orientado a resultados y disponible para nuevas oportunidades.
               </p>
               <p
                 style={{
@@ -65,9 +64,9 @@ export default function AboutSection() {
                   marginBottom: "1.25rem",
                 }}
               >
-                Tengo sólida experiencia en gestión y optimización de bases de datos
-                relacionales y NoSQL, arquitecturas orientadas a microservicios, y flujos de
-                CI/CD automatizados con Docker, Kubernetes y Jenkins.
+                He trabajado con Java, Spring Boot, Node.js y TypeScript, además de bases de datos
+                SQL Server, MySQL, Oracle PL/SQL y DynamoDB. También implemento flujos de CI/CD
+                con Docker, Kubernetes y Jenkins.
               </p>
               <p
                 style={{
@@ -76,8 +75,8 @@ export default function AboutSection() {
                   lineHeight: 1.8,
                 }}
               >
-                Me adapto de forma continua a las tendencias del sector — incluyendo el
-                desarrollo asistido por IA con herramientas como{" "}
+                Mi perfil incluye AWS, Serverless, desarrollo móvil y herramientas de desarrollo
+                asistido por IA como{" "}
                 <span style={{ color: "var(--text-primary)", fontWeight: 500 }}>
                   Google Antigravity
                 </span>{" "}
@@ -143,7 +142,8 @@ export default function AboutSection() {
                   "Clean Code",
                   "CI/CD",
                   "Microservicios",
-                  "Inglés intermedio",
+                  "AWS & Serverless",
+                  "Desarrollo móvil",
                   "Aprendizaje continuo",
                 ].map((tag) => (
                   <span key={tag} className="tech-badge">

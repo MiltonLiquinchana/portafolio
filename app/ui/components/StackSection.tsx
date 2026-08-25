@@ -60,7 +60,8 @@ const TECH_GROUPS: TechGroup[] = [
       { name: "Docker" },
       { name: "Kubernetes" },
       { name: "Jenkins" },
-      { name: "Git / GitHub / GitLab" },
+      { name: "Git" },
+      { name: "GitHub / GitLab" },
     ],
   },
   {
@@ -78,6 +79,7 @@ const TECH_GROUPS: TechGroup[] = [
       { name: "OpenAPI / Swagger" },
       { name: "Spring Data REST" },
       { name: "Desarrollo asistido IA" },
+      { name: "Linux" },
     ],
   },
 ];

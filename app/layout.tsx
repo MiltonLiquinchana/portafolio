@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     "AWS",
     "Ecuador",
   ],
-  authors: [{ name: "Milton Liquinchana", url: "mailto:liquinchana@hotmail.es" }],
+  authors: [{ name: "Milton Liquinchana", url: "mailto:mi100070n2019@outlook.com" }],
   openGraph: {
     title: "Milton Liquinchana | Full Stack Developer",
     description:

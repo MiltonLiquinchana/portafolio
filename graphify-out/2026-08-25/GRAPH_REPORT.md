@@ -1,16 +1,16 @@
-# Graph Report - portafolio  (2026-08-25)
+# Graph Report - portafolio  (2026-07-05)
 
 ## Corpus Check
-- 46 files · ~36,308 words
+- 45 files · ~19,536 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 239 nodes · 218 edges · 36 communities (24 shown, 12 thin omitted)
+- 225 nodes · 205 edges · 34 communities (22 shown, 12 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `03bcc74c`
+- Built from commit: `390ca2b7`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -40,7 +40,6 @@
 - [[_COMMUNITY_AGENTS|AGENTS.md]]
 - [[_COMMUNITY_graphify reference GitHub clone and cross-repo merge|graphify reference: GitHub clone and cross-repo merge]]
 - [[_COMMUNITY_graphify reference transcribe video and audio|graphify reference: transcribe video and audio]]
-- [[_COMMUNITY_Milton Liquinchana|Milton Liquinchana]]
 - [[_COMMUNITY_architecture-rules|architecture-rules.md]]
 - [[_COMMUNITY_graphify|graphify.md]]
 - [[_COMMUNITY_rules|rules.md]]
@@ -49,19 +48,18 @@
 - [[_COMMUNITY_eslint.config.mjs|eslint.config.mjs]]
 - [[_COMMUNITY_next.config.ts|next.config.ts]]
 - [[_COMMUNITY_postcss.config.mjs|postcss.config.mjs]]
-- [[_COMMUNITY_devDependencies|devDependencies]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `compilerOptions` - 16 edges
 2. `What You Must Do When Invoked` - 11 edges
 3. `/graphify` - 10 edges
-4. `Milton Liquinchana` - 10 edges
-5. `graphify reference: extra exports and benchmark` - 8 edges
-6. `ScrollReveal()` - 7 edges
-7. `scripts` - 5 edges
-8. `API Integration Architect` - 5 edges
-9. `Code Reviewer Senior` - 5 edges
-10. `Frontend Developer` - 5 edges
+4. `graphify reference: extra exports and benchmark` - 8 edges
+5. `ScrollReveal()` - 7 edges
+6. `scripts` - 5 edges
+7. `API Integration Architect` - 5 edges
+8. `Code Reviewer Senior` - 5 edges
+9. `Frontend Developer` - 5 edges
+10. `graphify reference: query, path, explain` - 5 edges
 
 ## Surprising Connections (you probably didn't know these)
 - None detected - all connections are within the same source files.
@@ -69,15 +67,15 @@
 ## Import Cycles
 - None detected.
 
-## Communities (36 total, 12 thin omitted)
+## Communities (34 total, 12 thin omitted)
 
 ### Community 0 - "page.tsx"
 Cohesion: 0.07
 Nodes (16): HIGHLIGHTS, FormState, SOCIAL_LINKS, COURSES, EDUCATION, EXPERIENCE, ExperienceItem, NAV_LINKS (+8 more)
 
 ### Community 1 - "devDependencies"
-Cohesion: 0.14
-Nodes (13): dependencies, next, react, react-dom, resend, name, private, scripts (+5 more)
+Cohesion: 0.08
+Nodes (23): dependencies, next, react, react-dom, resend, devDependencies, eslint, eslint-config-next (+15 more)
 
 ### Community 2 - "compilerOptions"
 Cohesion: 0.10
@@ -155,33 +153,21 @@ Nodes (3): Implement Feature, Notas operativas, Steps
 Cohesion: 0.50
 Nodes (3): Deploy on Vercel, Getting Started, Learn More
 
-### Community 25 - "Milton Liquinchana"
-Cohesion: 0.14
-Nodes (13): Capacitaciones, Contacto, Educación, Experiencia Laboral, Habilidades, Idiomas, INT Nelson Torres, Milton Liquinchana (+5 more)
-
-### Community 35 - "devDependencies"
-Cohesion: 0.20
-Nodes (10): devDependencies, eslint, eslint-config-next, sass, tailwindcss, @tailwindcss/postcss, @types/node, @types/react (+2 more)
-
 ## Knowledge Gaps
-- **148 isolated node(s):** `inter`, `metadata`, `HIGHLIGHTS`, `FormState`, `SOCIAL_LINKS` (+143 more)
+- **138 isolated node(s):** `inter`, `metadata`, `HIGHLIGHTS`, `FormState`, `SOCIAL_LINKS` (+133 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **12 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `devDependencies` connect `devDependencies` to `devDependencies`?**
-  _High betweenness centrality (0.006) - this node is a cross-community bridge._
 - **What connects `inter`, `metadata`, `HIGHLIGHTS` to the rest of the system?**
-  _148 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _138 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `page.tsx` be split into smaller, more focused modules?**
   _Cohesion score 0.06827880512091039 - nodes in this community are weakly interconnected._
 - **Should `devDependencies` be split into smaller, more focused modules?**
-  _Cohesion score 0.14285714285714285 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.08333333333333333 - nodes in this community are weakly interconnected._
 - **Should `compilerOptions` be split into smaller, more focused modules?**
   _Cohesion score 0.1 - nodes in this community are weakly interconnected._
 - **Should `What You Must Do When Invoked` be split into smaller, more focused modules?**
   _Cohesion score 0.08333333333333333 - nodes in this community are weakly interconnected._
-- **Should `Milton Liquinchana` be split into smaller, more focused modules?**
-  _Cohesion score 0.14285714285714285 - nodes in this community are weakly interconnected._

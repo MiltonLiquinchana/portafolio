@@ -1,87 +1,181 @@
 ---
-description: Flujo estructurado para implementar una feature completa (UI → Controller → Service → Repository) siguiendo la Clean Architecture del proyecto.
+description: Flujo estructurado para implementar cambios de código en Next.js siguiendo Clean Architecture, con soporte para todos los patrones de exposición.
 ---
 
 # Implement Feature
 
-Workflow para implementar features completas en Next.js bajo Clean Architecture. **Precondición de entorno**: Graphify debe estar instalado y su skill registrada en el sistema (`graphify install`). Si esto no está cumplido, ningún paso de este workflow puede ejecutarse correctamente.
+Workflow para cambios de código en Next.js / TypeScript. Cubre features nuevas, correcciones y ajustes puntuales.
 
-## Steps
+**Precondición**: Graphify instalado (`graphify install`) y MCP `sonarqube` operativo (`get_system_status` = `UP`). Ambas se verifican en el Paso 0/C0.
 
-0. **Verificar/Generar Grafo de Conocimiento** *(orquestador — no delegar a otras skills)*:
+## Selección de Ruta
 
-   - Verificar existencia de la skill `graphify` registrada (ej. `.agents/skills/graphify/SKILL.md`).
-     - Si NO está registrada → **DETENER el workflow**. Informar al usuario:
-       > "Graphify no está instalado/registrado en este sistema. Ejecuta `graphify install` (y `pip install graphifyy` si aún no lo tienes) antes de continuar — este workflow depende de él en todos sus pasos."
-   - Verificar existencia de `graphify-out/graph.json`.
-     - Si NO existe → invocar la skill `graphify` para generar el grafo inicial (`/graphify .`). Informar brevemente al usuario que esto puede tardar y usar la API configurada para docs/imágenes (el código se analiza localmente vía Tree-sitter, sin costo de API).
-     - Si existe → continuar directamente al Paso 1.
-   - Este paso solo se detiene de forma indefinida en el caso "skill no registrada" (precondición de entorno). La generación del grafo (`/graphify .`) se ejecuta directamente, sin requerir confirmación adicional — es parte obligatoria del flujo, no una sugerencia.
+Clasifica la solicitud antes de ejecutar cualquier paso:
 
-1. **Analizar contexto**: Usa `context-analyzer`. Esta skill consulta el grafo (`graphify query`, `graphify path`, `GRAPH_REPORT.md`) como fuente primaria.
+| Criterio | Ruta Completa | Ruta de Corrección |
+|----------|---------------|---------------------|
+| Archivos nuevos | ≥ 1 | 0 |
+| Capas nuevas | ≥ 1 capa (Controller, Service, Repository) | Solo capas existentes |
+| Contratos/interfaces nuevos en `domains/` | Sí | No |
+| Componentes de UI nuevos o cambios visuales | Sí | No, o cosméticos menores |
+| Ejemplo típico | "Crear CRUD de usuarios", "Agregar módulo de reportes" | "Corregir import incorrecto", "Cambiar patrón de ref", "Optimizar query" |
 
-2. **Definir arquitectura**: Usa `api-integration-architect` primero y luego `frontend-architect`. El orden importa: `api-integration-architect` define los contratos de `domains/` y `frontend-architect` los consume. Ambas skills consultan el grafo para localizar contratos y componentes existentes.
+Si cumple **≥ 1 criterio** de Ruta Completa → Ruta Completa.
+Si cumple **todos** los de Ruta de Corrección → Ruta de Corrección.
+En caso de duda, pregunta: "¿Esto es un ajuste puntual o involucra estructura nueva?"
 
-3. **Diseñar UX/UI** *(solo si la feature incluye cambios visuales o nuevos componentes de UI)*: Usa `ux-designer`.
+> Nota: "Optimizar query" es un ejemplo típico de Ruta de Corrección, pero si el diff toca `services/` o `controllers/` dispara igualmente el Paso C5 (pruebas) — la ruta ligera exime de arquitectura, UX y documentación, pero no de testing cuando `rules.md` lo exige.
 
-4. **Generar Plan de Implementación y esperar aprobación**: Usando los outputs de los pasos anteriores, generar el plan con el siguiente formato y detenerse. No continuar al paso 5 hasta recibir "aprobado" de forma explícita.
+---
 
-   ```
-   ## Plan de Implementación
+## Ruta Completa
 
-   ### ¿Qué se quiere realizar?
-   ...
+0. **Verificar precondiciones** (orquestador):
+   - **Graphify**: Verifica que la skill está registrada. Si no, detén el workflow. Si `graphify-out/graph.json` no existe, invoca `/graphify .`.
+   - **SonarQube MCP**: Invoca `get_system_status`. Si `status != UP` o no responde, detén el workflow. Informa: "El MCP de SonarQube no está operativo. Verifica la conexión y reintenta."
+   - Solo si ambas pasan, continúa.
 
-   ### Capas involucradas (UI → Controller → Service → Repository)
-   ...
+1. **Analizar contexto**: Usa `context-analyzer`. **Obligatorio**: esta skill debe resolver el contexto vía `graphify query` antes de leer archivos. No abras archivos individuales para mapear capas o dependencias mientras el grafo pueda responder.
 
-   ### Archivos / Componentes
-   - [ ] Crear: `ruta/archivo.ext` — capa: X — razón
-   - [ ] Modificar: `ruta/archivo.ext` — capa: X — razón
+2. **Definir contratos de datos**: Usa `api-integration-architect` para definir los contratos de `domains/models`, `domains/request` y `domains/responses`. Este paso no depende del diseño visual, por eso se ejecuta antes de la arquitectura de componentes.
 
-   ### Reutilización de Componentes Base (vía Graphify)
-   - Componente(s) base reutilizado(s): `ruta/componente.tsx` (o "Ninguno aplica — justificación")
-   - Cómo se usa
-   - Query del grafo usada para esta verificación
+3. **Diseñar UX/UI** *(solo si la feature incluye cambios visuales o nuevos componentes de UI)*: Usa `ux-designer`. Se ejecuta antes de la arquitectura de componentes (Paso 4) porque `frontend-architect` integra esta especificación en sus borradores — no al revés.
 
-   ### ¿Qué puede romperse?
-   ...
+4. **Definir arquitectura de componentes**: Usa `frontend-architect`. Consume los contratos del Paso 2 y, cuando aplicó, la especificación visual del Paso 3 (tokens, estados, motion) para construir jerarquía de componentes, estrategia de renderizado y los borradores de código.
 
-   ### ¿Por qué esta solución y no una alternativa?
-   ...
+5. **Generar Plan de Implementación** y esperar aprobación:
 
-   ### ¿Cómo se verifica que funcionó?
-   ...
+   La sección **"Código propuesto"** es **obligatoria** y no puede quedar vacía. Se alimenta de:
+   - Capa UI: borradores de `frontend-architect` (esqueleto de componentes).
+   - Capas Controller/Service/Repository/Domains: borradores de `api-integration-architect`.
+   - Especificación visual de `ux-designer`, cuando el Paso 3 aplicó.
 
-   ### ¿Se reutiliza lógica existente o se duplica?
-   ...
+````markdown
+# Plan de Implementación
 
-   ### ¿Genera o resuelve deuda técnica?
-   ...
+### ¿Qué se quiere realizar?
+...
 
-   ### Código propuesto
-   // archivo: ruta/archivo.ext | capa: X
-   ...
+### Archivos / Componentes
+□ Crear: ruta/archivo.ext — capa: X — razón
+□ Modificar: ruta/archivo.ext — capa: X — razón
 
-   ---
-   ⏸️ ESPERANDO APROBACIÓN — Responde "aprobado" para continuar o indica los cambios necesarios.
-   ```
+### Reutilización de Componentes Base (vía Graphify)
+- Componente(s) base reutilizado(s): ruta/componente.tsx (o "Ninguno aplica — justificación")
+- Cómo se usa: ...
+- Query del grafo usada para esta verificación: ...
 
-5. **Implementar código**: Usa `frontend-developer` y `api-integration-architect` según corresponda para escribir el código aprobado en cada capa.
+### Especificación de Diseño (UX) — solo si el Paso 3 aplicó
+- Tokens de diseño (Tailwind, HSL, radii, spacing): ...
+- Estados (éxito, carga, vacío, error): ...
+- Motion (`framer-motion`): staggers, transiciones, backdrop-blur: ...
+- (Si el Paso 3 no aplicó — sin cambios visuales — omite esta sección)
 
-6. **Revisión de calidad**: Usa `code-reviewer`. Esta skill consulta `GRAPH_REPORT.md` para detectar surprising connections que violen capas. Si el veredicto es "Requiere Cambios", volver al paso 5 con las correcciones indicadas antes de continuar.
+### ¿Qué puede romperse?
+  - Impacto en otras rutas: ...
+  - Contratos afectados: ...
+...
 
-7. **Persistir cambios**: Usa `file-writer` para escribir los archivos aprobados y revisados.
+### ¿Por qué esta solución y no una alternativa?
+...
 
-8. **Pruebas unitarias**: Usa `test-engineer` sobre los `services/` y `controllers/` creados o modificados.
+### ¿Cómo se verifica que funcionó?
+...
 
-9. **Documentación**: Usa `tech-writer` para JSDoc y README. Los comentarios `# WHY:`/JSDoc generados aquí son insumo directo del grafo en el siguiente paso.
+### ¿Se reutiliza lógica existente o se duplica?
+...
 
-10. **Actualizar Grafo de Conocimiento** *(orquestador — no delegar)*:
+### ¿Genera o resuelve deuda técnica?
+...
 
-    - Ejecutar `graphify --update` (incremental, AST local para código — sin costo de API).
-    - **Manejo de error**: si `--update` falla, registrar el error en el output final como advertencia de baja severidad. NO bloquear ni revertir los pasos anteriores — la feature ya fue aprobada, revisada y persistida; el grafo se corrige en la próxima actualización o vía `graphify hook install` en el siguiente commit.
+### Código propuesto
+Para cada archivo a crear o modificar, incluir un borrador con:
+- Firma del componente/función/clase
+- Props/interfaces con tipos
+- Estructura JSX de alto nivel (para componentes UI)
+- Hooks planificados y patrón de Controller (para UI)
+- Firma de métodos y constructor (para Controller/Service/Repository)
+
+Formato:
+// archivo: ruta/archivo.ext | capa: X | acción: Crear/Modificar
+<borrador de código>
+
+⏸️ ESPERANDO APROBACIÓN — Responde "aprobado" para continuar o indica los cambios necesarios.
+````
+
+
+6. **Implementar código**: Usa `frontend-developer` (capa UI) y `api-integration-architect` (capas de integración) según corresponda. Los borradores del Paso 2 (contratos) y Paso 4 (arquitectura de componentes) son la base — junto con la especificación de `ux-designer` (Paso 3, cuando aplicó) para motion, estados y accesibilidad. El código final incluye el detalle completo (validaciones, estilos).
+
+7. **Persistir cambios (working tree, sin commit)**: Usa `file-writer`.
+
+8. **Documentar**: Usa `tech-writer` (JSDoc + README) sobre el working tree, antes del commit.
+
+9. **Pruebas**: Usa `test-engineer`. Si fallan, vuelve al paso 6 (o directamente a `frontend-developer` para el fix puntual) y repite 7 y 8 antes de reintentar. Límite: 3 ciclos (6→7→8→9).
+
+10. **Revisión de calidad y SonarQube Gate**: Usa `code-reviewer` — ahora también revisa que el JSDoc generado en el Paso 8 no contradiga la implementación, y corre sobre código que ya pasó pruebas (Paso 9). Si `CHANGES REQUIRED`, vuelve al paso 6 y repite 7, 8 y 9. Si `APPROVED` / `APPROVED WITH RECOMMENDATIONS`, avanza — **sin commitear todavía**. **Límite de ciclos**: mismo tope de 3 iteraciones, acumulado con el del Paso 9 — si entre pruebas y revisión de calidad se superan 3 vueltas completas sin converger, detener y escalar al usuario.
+
+11. **Confirmar cambios** (orquestador): Ejecuta `git commit` — código y documentación entran en el mismo commit.
+
+12. **Actualizar Grafo**: Invoca el skill `graphify` con `--update` (no es un comando de shell suelto: dispara detección incremental y, si hay docs o imágenes cambiadas, extracción semántica vía subagentes; si el cambio es solo código, corre AST-only sin costo de API). Si falla, registra advertencia (no bloquea).
+
+---
+
+## Ruta de Corrección
+
+C0. **Verificar precondiciones**: Igual que Paso 0 de Ruta Completa — incluye tanto Graphify como la precondición de SonarQube MCP. No omitas la verificación de SonarQube solo porque la Ruta de Corrección es más liviana: C6 sigue dependiendo del mismo gate.
+
+C1. **Consulta al Grafo (obligatorio)**: Ejecuta `graphify query` / `graphify path` para localizar archivos afectados y sus dependencias **antes de abrir cualquier archivo**. Solo si el grafo no existe o no responde, lee los archivos directamente.
+   - Qué archivo(s) se ven afectados y qué dependencias tienen.
+   - Que el cambio propuesto no rompe el flujo UI → Controller → Service → Repository.
+
+C2. **Generar Plan de Corrección** y esperar aprobación:
+
+````markdown
+# Plan de Corrección
+
+### ¿Qué se corrige?
+(Descripción concisa del ajuste solicitado)
+
+### Archivos afectados
+□ Modificar: ruta/archivo.ext — qué cambia exactamente
+
+### Código actual vs. Código propuesto
+
+```diff
+ruta/archivo.ext
+- // código actual que se reemplaza
++ // código nuevo propuesto
+```
+
+### ¿Puede romper algo?
+(Dependencias afectadas según el grafo, o "No — cambio aislado")
+
+### Verificación con reglas del proyecto
+- ExceptionHandler: (¿el cambio respeta el manejo centralizado de errores?)
+- Capas: (¿el cambio mantiene el flujo UI → Controller → Service → Repository?)
+- Patrones: (¿el cambio es consistente con otros archivos similares?)
+- Testing: (¿el cambio toca lógica en `services/` o `controllers/`? Si sí, dispara C5)
+
+⏸️ ESPERANDO APROBACIÓN — Responde "aprobado" para continuar o indica los cambios necesarios.
+````
+
+C3. **Implementar corrección**: Usa `frontend-developer` (capa UI) o `api-integration-architect` (capas de integración) según corresponda, con el diff aprobado.
+
+C4. **Persistir cambios (working tree, sin commit)**: Usa `file-writer`.
+
+C5. **Pruebas (condicional)**: Si el diff aprobado en C2 modifica lógica en `services/` o `controllers/`, usa `test-engineer` antes de la revisión de calidad — la regla "Testing Obligatorio" de `rules.md` (`always_on`) aplica también a la Ruta de Corrección, no solo a features nuevas. Si el diff no toca esas capas (ej. import incorrecto, cambio de patrón de ref en UI), omite este paso. Si las pruebas fallan, vuelve a C3 (o directamente al fix puntual) y repite C4 antes de reintentar. Límite: 3 ciclos (C3→C4→C5).
+
+C6. **Revisión de calidad y SonarQube Gate**: Usa `code-reviewer`. Si `CHANGES REQUIRED`, vuelve a C3 y repite C4 (y C5, si aplicó). Límite: mismo tope de 3 iteraciones, acumulado con el de C5 — si entre pruebas y revisión se superan 3 vueltas completas sin converger, detener y escalar al usuario.
+
+C7. **Confirmar cambios** (orquestador): Ejecuta `git commit`.
+
+C8. **Actualizar Grafo**: Invoca el skill `graphify` con `--update`, igual que en el Paso 12 de la Ruta Completa. Misma política de manejo de error: si falla, registra advertencia (no bloquea).
+
+---
 
 ## Notas operativas
 
-- `graphify hook install` (configuración de proyecto, una sola vez) complementa el Paso 10: garantiza que el grafo también se actualice ante commits que ocurran fuera de este workflow.
+- Aplica `rules.md` y `architecture-rules.md` globalmente.
+- `graphify hook install` (configuración de proyecto, una sola vez) complementa el Paso 11 / C7: garantiza que el grafo también se actualice ante commits que ocurran fuera de este workflow.
+- Aprobación: "aprobado", "dale", "sí, procede", "ok" cuentan como confirmación. Si la respuesta incluye condiciones, aplica el cambio, muestra el plan actualizado y espera confirmación final.
+- Ciclos de corrección: 3 iteraciones máximo. Si no converge, escala al usuario con resumen del desacuerdo.

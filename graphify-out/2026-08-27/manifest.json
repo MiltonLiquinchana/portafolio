@@ -20,8 +20,8 @@
     "semantic_hash": ""
   },
   "package.json": {
-    "mtime": 1783279024.2939591,
-    "ast_hash": "fb542919f4610409a83794b861837770",
+    "mtime": 1787884917.0206327,
+    "ast_hash": "2a133c80f29119f2943b340a15ce5684",
     "semantic_hash": ""
   },
   "postcss.config.mjs": {
@@ -35,48 +35,48 @@
     "semantic_hash": ""
   },
   ".agents/rules/architecture-rules.md": {
-    "mtime": 1783275798.425894,
-    "ast_hash": "ba3769210257ac4a3ca0aec446174b2a",
+    "mtime": 1787882287.711677,
+    "ast_hash": "b24e71ae83c4d5af07e7247380ce4fa4",
     "semantic_hash": ""
   },
   ".agents/rules/graphify.md": {
-    "mtime": 1783270867.2916381,
-    "ast_hash": "f1e53ecc9194573d3c28fc116c743a2e",
+    "mtime": 1787882287.711677,
+    "ast_hash": "ca29fff4d02450c287ccd88f979c9094",
     "semantic_hash": ""
   },
   ".agents/rules/rules.md": {
-    "mtime": 1783270867.2916381,
-    "ast_hash": "93417abc03a1401f8bc07449aed39040",
+    "mtime": 1787882287.711677,
+    "ast_hash": "043bfac39de233ccacb7ac4e4dfee56c",
     "semantic_hash": ""
   },
   ".agents/skills/api-integration-architect/SKILL.md": {
-    "mtime": 1783270867.29211,
-    "ast_hash": "995bc46a556dcedeb57c79b7df2d8e41",
+    "mtime": 1787882287.7156773,
+    "ast_hash": "d05a77d96703411b61aad9b1430c66c4",
     "semantic_hash": ""
   },
   ".agents/skills/code-reviewer/SKILL.md": {
-    "mtime": 1783270867.29211,
-    "ast_hash": "6416f023df7a577fe942800d29e09d74",
+    "mtime": 1787882287.7196772,
+    "ast_hash": "73beb20472850ef88cf0379644e89bfd",
     "semantic_hash": ""
   },
   ".agents/skills/context-analyzer/SKILL.md": {
-    "mtime": 1783270867.29211,
-    "ast_hash": "6f94506c51a45e392a1592edccd6474b",
+    "mtime": 1787882287.7196772,
+    "ast_hash": "20dc900652464d64dad7d628bf56815a",
     "semantic_hash": ""
   },
   ".agents/skills/file-writer/SKILL.md": {
-    "mtime": 1783270867.29211,
-    "ast_hash": "d975058b4b4931efaea569bd79e5592b",
+    "mtime": 1787882287.7226772,
+    "ast_hash": "2fa1631a2b56039884f1901589878aa9",
     "semantic_hash": ""
   },
   ".agents/skills/frontend-architect/SKILL.md": {
-    "mtime": 1783270867.29211,
-    "ast_hash": "14f38ff5d848b6984119ec0deacdeecc",
+    "mtime": 1787882287.7236772,
+    "ast_hash": "de8554a0cf693577fb173c09cfc15cdd",
     "semantic_hash": ""
   },
   ".agents/skills/frontend-developer/SKILL.md": {
-    "mtime": 1783270867.29211,
-    "ast_hash": "790b9d61eaed15c5b05a53ac42912b94",
+    "mtime": 1787882287.7236772,
+    "ast_hash": "d792932b3f30844ecd4321d4cffc5915",
     "semantic_hash": ""
   },
   ".agents/skills/graphify/SKILL.md": {
@@ -125,28 +125,28 @@
     "semantic_hash": ""
   },
   ".agents/skills/tech-writer/SKILL.md": {
-    "mtime": 1783270867.2929173,
-    "ast_hash": "a963ac2f58ca10d045d8f595336339f0",
+    "mtime": 1787882287.7236772,
+    "ast_hash": "1701ceb88b23aa0dc8021eee05d247aa",
     "semantic_hash": ""
   },
   ".agents/skills/test-engineer/SKILL.md": {
-    "mtime": 1783270867.2929173,
-    "ast_hash": "7b5f2343754bfb39ea7501d6cd6df4c4",
+    "mtime": 1787882287.7236772,
+    "ast_hash": "a8a1b8c472aff099ed8b9418c92cda3f",
     "semantic_hash": ""
   },
   ".agents/skills/ux-designer/SKILL.md": {
-    "mtime": 1783270867.2929173,
-    "ast_hash": "49ca30fb77cc786f85bbc61423d18581",
+    "mtime": 1787882287.7236772,
+    "ast_hash": "43b4c84d6d13aa3fc72a5978c79fc8f1",
     "semantic_hash": ""
   },
   ".agents/workflows/graphify.md": {
-    "mtime": 1783270867.2929173,
-    "ast_hash": "0bc020d491fca99550c1ea3de0a5f862",
+    "mtime": 1787882287.7246773,
+    "ast_hash": "96418306a44e311982f4955a7e52147b",
     "semantic_hash": ""
   },
   ".agents/workflows/implement-feature.md": {
-    "mtime": 1783270867.2935448,
-    "ast_hash": "b7393d1bd3e62dd030a49b28e25c3c8b",
+    "mtime": 1787882287.7246773,
+    "ast_hash": "ad4594503592ff82d439ad4ae8fcf5ce",
     "semantic_hash": ""
   },
   "AGENTS.md": {
@@ -170,8 +170,8 @@
     "semantic_hash": ""
   },
   "app/ui/components/ContactSection.tsx": {
-    "mtime": 1787691808.411667,
-    "ast_hash": "c5122904f364fef73d68edd607715e30",
+    "mtime": 1787891282.3802829,
+    "ast_hash": "fa40ba88f3e8a696674a9bfe8aad2904",
     "semantic_hash": ""
   },
   "app/ui/components/EducationSection.tsx": {
@@ -214,21 +214,6 @@
     "ast_hash": "1a681e0bfd40635e0572784f1f96b164",
     "semantic_hash": ""
   },
-  "app/api/contact/route.ts": {
-    "mtime": 1783279362.320985,
-    "ast_hash": "e24c32e7daf0d65292613663824420e3",
-    "semantic_hash": ""
-  },
-  "app/domains/contact/ContactService.ts": {
-    "mtime": 1787692066.8923569,
-    "ast_hash": "09aba3671c9a9c8a94695e1f456f6247",
-    "semantic_hash": ""
-  },
-  "hojavida.md": {
-    "mtime": 1787689253.2788963,
-    "ast_hash": "f8603b27a62dd43a1077572599552f4d",
-    "semantic_hash": ""
-  },
   "public/logo.svg": {
     "mtime": 1783301398.227202,
     "ast_hash": "0df991caba5f48ce4d4bbbd3fb599967",
@@ -237,6 +222,191 @@
   "public/logomflq.svg": {
     "mtime": 1783302661.0418148,
     "ast_hash": "238e122ac0bc29ef65abff6beccf2471",
+    "semantic_hash": ""
+  },
+  ".agents/mcp_config.json": {
+    "mtime": 1787882287.709677,
+    "ast_hash": "e6320a826776b854adf1b0532271299a",
+    "semantic_hash": ""
+  },
+  "utils/ControllerContexts.ts": {
+    "mtime": 1787884505.1550179,
+    "ast_hash": "48f76743631e3126db7851a3687393ff",
+    "semantic_hash": ""
+  },
+  "utils/ExceptionHandler.ts": {
+    "mtime": 1787890787.4913654,
+    "ast_hash": "faee2aa6368f4431d911de9eb0872376",
+    "semantic_hash": ""
+  },
+  "utils/ToastConfiguration.ts": {
+    "mtime": 1787882633.9388988,
+    "ast_hash": "95b6ab429abe2fa1699611da5ff790f0",
+    "semantic_hash": ""
+  },
+  "utils/errors/CustomError.ts": {
+    "mtime": 1787882799.2017434,
+    "ast_hash": "9556ae2914ddaa804fefff1de4bbaa62",
+    "semantic_hash": ""
+  },
+  "utils/errors/axios/CustomConflictError.ts": {
+    "mtime": 1787882799.2026486,
+    "ast_hash": "e97c164b62ba76f9f8ce69f55828f2ba",
+    "semantic_hash": ""
+  },
+  "utils/errors/axios/CustomGenericError.ts": {
+    "mtime": 1787882799.2031024,
+    "ast_hash": "43913a124e54ce476758213b10442be5",
+    "semantic_hash": ""
+  },
+  "utils/errors/axios/CustomInternalServerError.ts": {
+    "mtime": 1787882799.203509,
+    "ast_hash": "ad5754f7e3952f89f8af62cad7196cec",
+    "semantic_hash": ""
+  },
+  "utils/errors/axios/CustomNotFoundError.ts": {
+    "mtime": 1787882799.2043073,
+    "ast_hash": "49282f874691260dd672809603383f89",
+    "semantic_hash": ""
+  },
+  "utils/errors/axios/CustomTimeoutError.ts": {
+    "mtime": 1787882799.2047374,
+    "ast_hash": "118b627f1badb178457d29358ac03a0c",
+    "semantic_hash": ""
+  },
+  "utils/errors/camera/CustomCameraNotFoundError.ts": {
+    "mtime": 1787882799.2056246,
+    "ast_hash": "788a5a0d3d6b14745a21bd71d3ad6e4c",
+    "semantic_hash": ""
+  },
+  "utils/errors/camera/CustomNotAllowedError.ts": {
+    "mtime": 1787882799.20635,
+    "ast_hash": "2debef9c729eb2299bbec1744cc620b8",
+    "semantic_hash": ""
+  },
+  "utils/errors/camera/CustomNotReadableError.ts": {
+    "mtime": 1787882799.20678,
+    "ast_hash": "01ccc3bd62672b9f8fdf46230b8328c8",
+    "semantic_hash": ""
+  },
+  "utils/errors/camera/CustomOverconstrainedError.ts": {
+    "mtime": 1787882799.2074056,
+    "ast_hash": "3d9f36cf85fdd795982d8ae33ff4455d",
+    "semantic_hash": ""
+  },
+  "utils/errors/camera/CustomSecurityError.ts": {
+    "mtime": 1787882799.2085822,
+    "ast_hash": "7c97e89f4519cfc400e19bcbf10f1d65",
+    "semantic_hash": ""
+  },
+  ".agents/rules/performance-budget.md": {
+    "mtime": 1787882287.711677,
+    "ast_hash": "99defd157ce7455287a037485f6feb2e",
+    "semantic_hash": ""
+  },
+  ".agents/rules/sonarqube-compliance.md": {
+    "mtime": 1787882287.7156773,
+    "ast_hash": "d7bbf3cde374dd95d65158193c895be8",
+    "semantic_hash": ""
+  },
+  ".agents/skills/code-reviewer/references/sonarqube-tools.md": {
+    "mtime": 1787882287.7196772,
+    "ast_hash": "50eb29fd03620c453536caecb2588c58",
+    "semantic_hash": ""
+  },
+  ".vscode/mcp.json": {
+    "mtime": 1787884229.3750474,
+    "ast_hash": "3a0879dadd4b09ac1a1e2ba54478ed3e",
+    "semantic_hash": ""
+  },
+  "app/api/contact/route.ts": {
+    "mtime": 1787890787.5783663,
+    "ast_hash": "bdd0b1988b1810d9e0ad3b07c7b815c9",
+    "semantic_hash": ""
+  },
+  "controllers/contact/ContactController.test.ts": {
+    "mtime": 1787889056.0940804,
+    "ast_hash": "3e8d561a5cfa1627ba99ced40ac0e967",
+    "semantic_hash": ""
+  },
+  "controllers/contact/ContactController.ts": {
+    "mtime": 1787891287.6400115,
+    "ast_hash": "94a2a486a659aff4eee41a5417f4a650",
+    "semantic_hash": ""
+  },
+  "domains/models/ContactModel.ts": {
+    "mtime": 1787889620.08082,
+    "ast_hash": "b62785fbc6b8b854acd3d1fb5f12753a",
+    "semantic_hash": ""
+  },
+  "domains/request/SendContactRequest.ts": {
+    "mtime": 1787889620.0829747,
+    "ast_hash": "54b2b4e7c66ab2a6915ec2d812a6d4f1",
+    "semantic_hash": ""
+  },
+  "domains/responses/SendContactResponse.ts": {
+    "mtime": 1787889535.9469664,
+    "ast_hash": "3a68fbd66439fcc880c5fdda3afe07d3",
+    "semantic_hash": ""
+  },
+  "repository/contact/ContactRepository.ts": {
+    "mtime": 1787891282.3812828,
+    "ast_hash": "dae31cdf2da517a570821daabe9825b4",
+    "semantic_hash": ""
+  },
+  "repository/contact/ResendContactRepository.ts": {
+    "mtime": 1787890787.5733664,
+    "ast_hash": "0bec32fe952c9cfeff43470365edf714",
+    "semantic_hash": ""
+  },
+  "services/contact/ContactService.test.ts": {
+    "mtime": 1787884585.1485739,
+    "ast_hash": "ac0699aa66bccc8411764ac99731193a",
+    "semantic_hash": ""
+  },
+  "services/contact/ContactService.ts": {
+    "mtime": 1787891282.3802829,
+    "ast_hash": "80c53795ceb459707312a480d05ae40d",
+    "semantic_hash": ""
+  },
+  "utils/CameraSystemMessageConstructor.ts": {
+    "mtime": 1787884924.5324533,
+    "ast_hash": "b6df6164a2fb1f6d73cab6ce2a76aa44",
+    "semantic_hash": ""
+  },
+  "utils/Logger.ts": {
+    "mtime": 1787891282.379283,
+    "ast_hash": "29f234a8f987dd131d6c42236afa44b1",
+    "semantic_hash": ""
+  },
+  "utils/SystemMessageConstructor.ts": {
+    "mtime": 1787884924.5273654,
+    "ast_hash": "1641910b1bd3985d681aeb34a15bb800",
+    "semantic_hash": ""
+  },
+  "utils/apiClient.ts": {
+    "mtime": 1787889535.9449663,
+    "ast_hash": "9036b336c3390921bd172c0773fb027d",
+    "semantic_hash": ""
+  },
+  "vitest.config.ts": {
+    "mtime": 1787884599.9800053,
+    "ast_hash": "dca0f134fb193767dc814ecd7f374565",
+    "semantic_hash": ""
+  },
+  "app/api/contact/route.test.ts": {
+    "mtime": 1787889032.240841,
+    "ast_hash": "daf36f75748466351c6354a057c8b70f",
+    "semantic_hash": ""
+  },
+  "controllers/contact/createContactController.ts": {
+    "mtime": 1787889535.9479663,
+    "ast_hash": "2afe0870d60e6410e87e4530cf2b68a6",
+    "semantic_hash": ""
+  },
+  "app/ui/hooks/useContactController.ts": {
+    "mtime": 1787891282.3812828,
+    "ast_hash": "57fc505aa759fbcd37cf1573a8fd5f0c",
     "semantic_hash": ""
   }
 }

@@ -5,35 +5,39 @@ description: Define la arquitectura técnica y contratos de datos en Next.js, us
 
 # Frontend Architect
 
-Role: Technical strategist. Design scalable component structures that support complex visual & motion requirements.
+Rol: Define la arquitectura de componentes y la estrategia de renderizado. Los contratos de `domains/` son definidos por `api-integration-architect`; esta skill los consume, no los redefine.
 
-## Tasks
-- **Component Hierarchy**: Define folder/file structure (Atomic Design, Features).
-- **Auditoría de Componentes Reutilizables (obligatoria antes de proponer un componente nuevo)**:
-  1. Usar `graphify query "componentes en app/ui reutilizados por 2 o más archivos"` y `graphify query "componentes similares a <descripción del componente requerido>"` para identificar candidatos a reutilizar. El grafo refleja imports reales — no depende de convenciones de nombres de archivo.
-  2. Para cada componente nuevo propuesto:
-     - ¿Existe un componente base similar o un contenedor que pueda envolver la nueva lógica?
-     - Si sí → especificar en el output qué componente base se reutiliza y cómo (envolver/extender/props), citando la query del grafo usada.
-     - Si no → justificar explícitamente por qué se requiere un componente nuevo, y si tiene suficiente genericidad para ser reutilizado a futuro, marcarlo como candidato a componente base.
-  - Casos típicos a validar contra el grafo: Modales (`modal-container`), Inputs (`custom-input`, `custom-select`), Botones (`custom-button` + variantes), Tablas, Cards — y cualquier otro patrón con 2+ reutilizaciones que el grafo identifique.
-- **Rendering Strategy**: Decide Server vs Client components.
-- **Data Contracts**: Definir los tipos y props estrictos que la UI necesita. Los contratos de `domains/models`, `domains/request` y `domains/responses` son responsabilidad de `api-integration-architect`; este skill los consume, no los define.
-- **Hooks & Services**: Plan shared logic.
-- **State & Forms**: Decide state libraries (Zustand, Context) and forms (React Hook Form).
-- **Dependencies**: Identify needed external libraries.
-- **Feature Plan**: Definir la estructura exacta de controllers, services y repositories que se deben crear para la feature.
-- **Context Maintenance**: El mapa de relaciones funcionales (flujos UI → Controller → Service → Repository) se actualiza vía `graphify --update` (Paso 10 del workflow), reflejando automáticamente la arquitectura definida aquí. No requiere documentación manual adicional.
+## Tareas
 
-## Rules
-- **Aplica**: Reglas globales de `rules.md` y `architecture-rules.md`.
-- Priorizar composición.
-- **Reutilización por defecto, verificada vía grafo**: la auditoría de componentes reutilizables no es opcional. Todo componente nuevo propuesto debe incluir en el output si reutiliza algo existente (con la query del grafo que lo confirma) o por qué no.
-- Si se requiere nueva librería, pedir autorización.
-- Integrar diseño visual de `ux-designer` (animaciones/estados) en la técnica.
-- Los contratos de `domains/` (models, request, responses) son definidos por `api-integration-architect`. Este skill debe referenciarlos pero no redefinirlos ni contradecirlos.
-- El output debe ser un plan arquitectónico accionable que el developer pueda ejecutar directamente.
-- No generar ni actualizar `graphify-out/graph.json` — esa responsabilidad es del workflow (Pasos 0 y 10).
+- **Jerarquía de Componentes**: Define estructura de carpetas y árbol de componentes.
+- **Auditoría de Componentes Reutilizables (obligatoria antes de proponer uno nuevo)**:
+1. Usa `graphify query "componentes en app/ui reutilizados por 2 o más archivos"` y `graphify query "componentes similares a <descripción>"` para identificar candidatos a reutilizar.
+2. Para cada componente nuevo propuesto:
+  - ¿Existe un componente base similar? Si sí → especifica cuál y cómo se reutiliza (envolver/extender/props), citando la query del grafo.
+  - Si no → justifica por qué se requiere uno nuevo, y si es genérico, márcalo como candidato a componente base.
+- **Estrategia de Renderizado**: Decide Server vs Client Components.
+- **Hooks y Servicios**: Planifica lógica compartida.
+- **Estado y Formularios**: Decide librería de estado (Zustand, Context, Redux) y formularios (React Hook Form).
+- **Dependencias**: Identifica librerías externas necesarias. Si se requiere una nueva, pide autorización.
+- **Plan de Feature**: Define la estructura exacta de controllers, services y repositories necesarios.
+- **Borrador de Código (obligatorio)**: Para cada componente nuevo o modificado, produce un esqueleto con:
+- Firma del componente (nombre, props con tipos)
+- Interfaces de props (completas, con tipos estrictos)
+- Estructura JSX de alto nivel
+- Hooks planificados (useState, useRef, useEffect con comentario de propósito)
+- Patrón de Controller si aplica (useRef + useEffect para instanciación)
+
+## Reglas
+
+- Aplica `rules.md` y `architecture-rules.md`.
+- Prioriza composición sobre herencia.
+- **Reutilización por defecto, verificada vía grafo**: la auditoría de componentes reutilizables no es opcional.
+- Los contratos de `domains/` son definidos por `api-integration-architect`. Referéncialos pero no los redefinas.
+- Integra el diseño visual de `ux-designer` en la arquitectura técnica.
+- No generes ni actualices `graphify-out/graph.json`.
 
 ## Output
-- Devuelve la arquitectura en formato Markdown estructurado y claro (no se requiere JSON).
-- Incluir obligatoriamente una sección "Componentes Base Disponibles / Reutilización" listando, para cada componente nuevo propuesto, qué se reutiliza y cómo (con la query del grafo usada), o la justificación si no aplica reutilización. Esta sección alimenta directamente la sección "Reutilización de Componentes Base (vía Graphify)" del Plan de Implementación (Paso 4 del workflow).
+
+- Arquitectura en Markdown estructurado.
+- Sección obligatoria **"Componentes Base Disponibles / Reutilización"**: para cada componente nuevo, qué se reutiliza y cómo (con query del grafo), o justificación.
+- Sección obligatoria **"Borradores de Código"**: esqueleto de cada componente nuevo o modificado. No puede quedar vacía si hay componentes UI involucrados.

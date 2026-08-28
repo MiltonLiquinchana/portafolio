@@ -1,18 +1,54 @@
-# Arquitectura (Aqua San Isidro)
+---
+trigger: always_on
+---
 
-- **Clean Architecture**: `UI -> Controller -> Service -> Repository -> API`.
-  - Prohibido saltar capas (UI nunca llama a Repository/API).
-  - Los Controllers exponen un `onError` inyectado por la UI en su constructor para el `ExceptionHandler`.
-- **Estructura Estricta de UI**: TODO el código visual (componentes, layouts, vistas) y hooks DEBE estar contenido dentro de `app/ui/`.
-  - **PROHIBIDO** crear carpetas genéricas como `components/`, `hooks/` o `styles/` en la raíz del proyecto o dentro de `src/`.
-- **Modelos**: Uso estricto de `domains/models`, `domains/request` y `domains/responses`. Prohibido usar `any`.
-- **Next.js**: Server Components por defecto en `app/`. Usar `"use client"` solo en hojas (leaf) que requieran estado, efectos o interactividad.
-- **Estado**: Preferir estado local en componentes usando Controllers. Redux (`store.ts`) reservado para flujos globales complejos multi-paso.
-- **Estética & Motion (Framer)**: Customizar componentes. Usar design tokens de Tailwind. Requerido: `staggered reveals`, transiciones, `backdrop-blur`, sombras complejas. Cumplir WCAG 2.1 (AA).
-- **SCSS y Estilos**:
-  - TODOS los archivos fuente de estilos (`.scss` / `.sass`) DEBEN crearse estrictamente dentro de `app/ui/sass/`. 
-  - Los parciales `_Nombre.scss` se importan en `Global.scss`.
-  - El archivo `app/ui/css/Global.css` es autogenerado (los compilados van en `app/ui/css/`).
-  - **PROHIBIDO** editar `.css` directamente o crear archivos `.css` / `.scss` sueltos en otras carpetas.
-- **Calidad (SonarQube)**: Cobertura > 80%, Complejidad Ciclomática <= 10. Prohibido duplicar código (usar hooks/servicios comunes). Pruebas unitarias antes del push.
+# Reglas de Arquitectura (Next.js / TypeScript)
 
+Reglas obligatorias para mantener consistencia y calidad en el proyecto frontend.
+
+## 1. Clean Architecture
+
+- **Flujo estricto**: UI → Controller → Service → Repository → API.
+- UI nunca llama a Repository ni a `apiClient` directamente.
+- Controller recibe `onError` en su constructor y lo registra en `ExceptionHandler`.
+- Service orquesta la lógica de negocio.
+- Repository centraliza las llamadas a API usando `apiClient`.
+- **Estructura de carpetas**: TODO el código visual (componentes, layouts, vistas) y hooks DEBE estar dentro de `app/ui/`.
+- **PROHIBIDO** crear carpetas genéricas como `components/`, `hooks/` o `styles/` en la raíz o dentro de `src/`.
+
+## 2. TypeScript y Modelos
+
+- Usa `interface` para objetos públicos. Prohíbe `any`.
+- Modelos en `domains/models`, requests en `domains/request`, responses en `domains/responses`.
+- `api-integration-architect` define los contratos de `domains/`. `frontend-architect` y `frontend-developer` los consumen, no los redefinen.
+
+## 3. Next.js y Renderizado
+
+- Server Components por defecto en `app/`. Usa `"use client"` solo en componentes que requieran estado, efectos, event handlers o interactividad del navegador.
+- `next/image` para todas las imágenes. `dynamic imports` para componentes pesados.
+
+## 4. Estado
+
+| Estrategia | Cuándo usar |
+|------------|-------------|
+| `useState` / `useRef` local | Estado de un solo componente o formulario simple |
+| Controller Pattern (`useRef` + `useEffect`) | Lógica de negocio que orquesta servicios |
+| Zustand / Context | Estado compartido entre múltiples componentes no emparentados |
+| Redux (`store.ts`) | Flujos globales multi-paso con acciones y reducers (ej. wizard, onboarding) |
+
+## 5. Estilos
+
+- Tailwind CSS con design tokens del proyecto. SCSS para estilos globales.
+- Archivos `.scss` solo en `app/ui/sass/`. Parciales `_Nombre.scss` se importan en `Global.scss`.
+- `app/ui/css/Global.css` es autogenerado. **PROHIBIDO** editar `.css` directamente.
+- Motion y animaciones con `framer-motion`. Requerido: staggered reveals, transiciones, `backdrop-blur`.
+
+## 6. Accesibilidad
+
+- Cumplir WCAG 2.1 (AA). Contraste mínimo 4.5:1.
+- Roles ARIA, focus management, etiquetas semánticas en formularios.
+
+## 7. Calidad
+
+- Cobertura > 80%. Complejidad ciclomática ≤ 10. Prohíbe duplicar lógica.
+- `code-reviewer` verifica el cumplimiento antes del commit.

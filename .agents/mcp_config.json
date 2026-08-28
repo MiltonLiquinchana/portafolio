@@ -1,0 +1,45 @@
+{
+  "mcpServers": {
+    "MySqlServerMCP": {
+      "command": "/home/miltonlq/Instalaciones/db-mcp-server/bin/server-linux",
+      "args": [
+        "-t",
+        "stdio",
+        "-c",
+        "/home/miltonlq/Instalaciones/db-mcp-server/config.json"
+      ]
+    },
+    "graphify": {
+      "command": "uv",
+      "args": [
+        "run",
+        "--with",
+        "graphifyy",
+        "--with",
+        "mcp",
+        "-m",
+        "graphify.serve",
+        "${workspace.path}/graphify-out/graph.json"
+      ]
+    },
+    "sonarqube": {
+      "command": "docker",
+      "args": [
+        "run",
+        "--init",
+        "--pull=always",
+        "-i",
+        "--rm",
+        "-e",
+        "SONARQUBE_URL",
+        "-e",
+        "SONARQUBE_TOKEN",
+        "mcp/sonarqube"
+      ],
+      "env": {
+        "SONARQUBE_URL": "http://192.168.8.28:9000",
+        "SONARQUBE_TOKEN": "squ_..."
+      }
+    }
+  }
+}

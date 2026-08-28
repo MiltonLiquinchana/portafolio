@@ -5,7 +5,6 @@
   "3": "What You Must Do When Invoked",
   "4": "/graphify",
   "5": "graphify reference: extra exports and benchmark",
-  "6": "API Integration Architect",
   "7": "Code Reviewer Senior",
   "8": "Frontend Developer",
   "9": "graphify reference: query, path, explain",
@@ -24,7 +23,7 @@
   "22": "AGENTS.md",
   "23": "graphify reference: GitHub clone and cross-repo merge",
   "24": "graphify reference: transcribe video and audio",
-  "25": "Milton Liquinchana",
+  "25": "Referencia: herramientas MCP `sonarqube` (Frontend)",
   "26": "architecture-rules.md",
   "27": "graphify.md",
   "28": "rules.md",
@@ -34,5 +33,9 @@
   "32": "next.config.ts",
   "33": "postcss.config.mjs",
   "34": "CLAUDE.md",
-  "35": "devDependencies"
+  "35": "route.ts",
+  "36": "route.ts",
+  "37": "axios.d.ts",
+  "38": "Performance Budget (Frontend)",
+  "40": "sonarqube-compliance.md"
 }

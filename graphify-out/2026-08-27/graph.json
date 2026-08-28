@@ -670,7 +670,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "package_devdependencies",
-      "community": 1,
+      "community": 35,
       "norm_label": "devdependencies"
     },
     {
@@ -680,7 +680,7 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "package_devdependencies_tailwindcss_postcss",
-      "community": 1,
+      "community": 35,
       "norm_label": "@tailwindcss/postcss"
     },
     {
@@ -690,7 +690,7 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "package_devdependencies_types_node",
-      "community": 1,
+      "community": 35,
       "norm_label": "@types/node"
     },
     {
@@ -700,7 +700,7 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "package_devdependencies_types_react",
-      "community": 1,
+      "community": 35,
       "norm_label": "@types/react"
     },
     {
@@ -710,7 +710,7 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "package_devdependencies_types_react_dom",
-      "community": 1,
+      "community": 35,
       "norm_label": "@types/react-dom"
     },
     {
@@ -720,7 +720,7 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "package_devdependencies_eslint",
-      "community": 1,
+      "community": 35,
       "norm_label": "eslint"
     },
     {
@@ -730,7 +730,7 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "package_devdependencies_eslint_config_next",
-      "community": 1,
+      "community": 35,
       "norm_label": "eslint-config-next"
     },
     {
@@ -740,7 +740,7 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "package_devdependencies_sass",
-      "community": 1,
+      "community": 35,
       "norm_label": "sass"
     },
     {
@@ -750,7 +750,7 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "package_devdependencies_tailwindcss",
-      "community": 1,
+      "community": 35,
       "norm_label": "tailwindcss"
     },
     {
@@ -760,7 +760,7 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "package_devdependencies_typescript",
-      "community": 1,
+      "community": 35,
       "norm_label": "typescript"
     },
     {
@@ -2252,6 +2252,146 @@
       "id": "readme_deploy_on_vercel",
       "community": 21,
       "norm_label": "deploy on vercel"
+    },
+    {
+      "label": "hojavida.md",
+      "file_type": "document",
+      "source_file": "hojavida.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "hojavida",
+      "community": 25,
+      "norm_label": "hojavida.md"
+    },
+    {
+      "label": "Milton Liquinchana",
+      "file_type": "document",
+      "source_file": "hojavida.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "hojavida_milton_liquinchana",
+      "community": 25,
+      "norm_label": "milton liquinchana"
+    },
+    {
+      "label": "Programador de Software",
+      "file_type": "document",
+      "source_file": "hojavida.md",
+      "source_location": "L2",
+      "_origin": "ast",
+      "id": "hojavida_programador_de_software",
+      "community": 25,
+      "norm_label": "programador de software"
+    },
+    {
+      "label": "Perfil Personal",
+      "file_type": "document",
+      "source_file": "hojavida.md",
+      "source_location": "L4",
+      "_origin": "ast",
+      "id": "hojavida_perfil_personal",
+      "community": 25,
+      "norm_label": "perfil personal"
+    },
+    {
+      "label": "Contacto",
+      "file_type": "document",
+      "source_file": "hojavida.md",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "hojavida_contacto",
+      "community": 25,
+      "norm_label": "contacto"
+    },
+    {
+      "label": "Idiomas",
+      "file_type": "document",
+      "source_file": "hojavida.md",
+      "source_location": "L13",
+      "_origin": "ast",
+      "id": "hojavida_idiomas",
+      "community": 25,
+      "norm_label": "idiomas"
+    },
+    {
+      "label": "Habilidades",
+      "file_type": "document",
+      "source_file": "hojavida.md",
+      "source_location": "L16",
+      "_origin": "ast",
+      "id": "hojavida_habilidades",
+      "community": 25,
+      "norm_label": "habilidades"
+    },
+    {
+      "label": "Experiencia Laboral",
+      "file_type": "document",
+      "source_file": "hojavida.md",
+      "source_location": "L24",
+      "_origin": "ast",
+      "id": "hojavida_experiencia_laboral",
+      "community": 25,
+      "norm_label": "experiencia laboral"
+    },
+    {
+      "label": "NUBE Corporation \u2014 \u00c1rea de TI, Desarrollador Full Stack",
+      "file_type": "document",
+      "source_file": "hojavida.md",
+      "source_location": "L26",
+      "_origin": "ast",
+      "id": "hojavida_nube_corporation_\u00e1rea_de_ti_desarrollador_full_stack",
+      "community": 25,
+      "norm_label": "nube corporation \u2014 area de ti, desarrollador full stack"
+    },
+    {
+      "label": "INT Nelson Torres",
+      "file_type": "document",
+      "source_file": "hojavida.md",
+      "source_location": "L32",
+      "_origin": "ast",
+      "id": "hojavida_int_nelson_torres",
+      "community": 25,
+      "norm_label": "int nelson torres"
+    },
+    {
+      "label": "Proyectos",
+      "file_type": "document",
+      "source_file": "hojavida.md",
+      "source_location": "L36",
+      "_origin": "ast",
+      "id": "hojavida_proyectos",
+      "community": 25,
+      "norm_label": "proyectos"
+    },
+    {
+      "label": "Proyecto Personal, Full Stack Developer",
+      "file_type": "document",
+      "source_file": "hojavida.md",
+      "source_location": "L38",
+      "_origin": "ast",
+      "id": "hojavida_proyecto_personal_full_stack_developer",
+      "community": 25,
+      "norm_label": "proyecto personal, full stack developer"
+    },
+    {
+      "label": "Educaci\u00f3n",
+      "file_type": "document",
+      "source_file": "hojavida.md",
+      "source_location": "L44",
+      "_origin": "ast",
+      "id": "hojavida_educaci\u00f3n",
+      "community": 25,
+      "norm_label": "educacion"
+    },
+    {
+      "label": "Capacitaciones",
+      "file_type": "document",
+      "source_file": "hojavida.md",
+      "source_location": "L47",
+      "_origin": "ast",
+      "id": "hojavida_capacitaciones",
+      "community": 25,
+      "norm_label": "capacitaciones"
     }
   ],
   "links": [
@@ -4329,8 +4469,138 @@
       "source": "readme",
       "target": "readme_learn_more",
       "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "hojavida.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "hojavida",
+      "target": "hojavida_milton_liquinchana",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "hojavida.md",
+      "source_location": "L47",
+      "weight": 1.0,
+      "source": "hojavida_milton_liquinchana",
+      "target": "hojavida_capacitaciones",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "hojavida.md",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "hojavida_milton_liquinchana",
+      "target": "hojavida_contacto",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "hojavida.md",
+      "source_location": "L44",
+      "weight": 1.0,
+      "source": "hojavida_milton_liquinchana",
+      "target": "hojavida_educaci\u00f3n",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "hojavida.md",
+      "source_location": "L24",
+      "weight": 1.0,
+      "source": "hojavida_milton_liquinchana",
+      "target": "hojavida_experiencia_laboral",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "hojavida.md",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "hojavida_milton_liquinchana",
+      "target": "hojavida_habilidades",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "hojavida.md",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "hojavida_milton_liquinchana",
+      "target": "hojavida_idiomas",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "hojavida.md",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "hojavida_milton_liquinchana",
+      "target": "hojavida_perfil_personal",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "hojavida.md",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "hojavida_milton_liquinchana",
+      "target": "hojavida_programador_de_software",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "hojavida.md",
+      "source_location": "L36",
+      "weight": 1.0,
+      "source": "hojavida_milton_liquinchana",
+      "target": "hojavida_proyectos",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "hojavida.md",
+      "source_location": "L32",
+      "weight": 1.0,
+      "source": "hojavida_experiencia_laboral",
+      "target": "hojavida_int_nelson_torres",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "hojavida.md",
+      "source_location": "L26",
+      "weight": 1.0,
+      "source": "hojavida_experiencia_laboral",
+      "target": "hojavida_nube_corporation_\u00e1rea_de_ti_desarrollador_full_stack",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "hojavida.md",
+      "source_location": "L38",
+      "weight": 1.0,
+      "source": "hojavida_proyectos",
+      "target": "hojavida_proyecto_personal_full_stack_developer",
+      "confidence_score": 1.0
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "6c48549e05414cc166d859dd41ff25c54236f4c9"
+  "built_at_commit": "03bcc74c96a5e12dba8db7c6c0d0645faa1c0d8c"
 }

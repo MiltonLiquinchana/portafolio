@@ -20,7 +20,7 @@ interface ExperienceItem {
 /** Historial de experiencia laboral */
 const EXPERIENCE: ExperienceItem[] = [
     {
-        company: "NUBE Corporation",
+        company: "CreaTuImagenDigital",
         role: "Desarrollador Full Stack",
         period: "Oct 2023 — Nov 2025",
         type: "Área de TI",
